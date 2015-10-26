@@ -23,7 +23,6 @@ class HangmanViewController: UIViewController {
     func keyboardWillShow(sender: NSNotification) {
         if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
             self.bottomLayout?.constant = bottom! + keyboardSize.height
-            print(keyboardSize.height)
         }
     }
     
@@ -36,7 +35,6 @@ class HangmanViewController: UIViewController {
         hangman.start()
         guessesLabel.text = ""
         knownLetters.text = hangman.knownString
-        print(hangman.answer)
         wrongCounter = 0
         hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
     }
