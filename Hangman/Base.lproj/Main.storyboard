@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Vr-cw-7t5">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,9 +31,8 @@
                                     <action selector="guessWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AvD-XF-H17"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-Q5-3OR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-Q5-3OR">
                                 <rect key="frame" x="200" y="72" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.93249604990000001" green="0.15615982780000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="8s5-eg-W3K"/>
                                     <constraint firstAttribute="height" constant="200" id="PaB-Ay-q1Z"/>
@@ -64,10 +64,10 @@
                             <constraint firstItem="54v-Qu-sIu" firstAttribute="centerY" secondItem="AWd-uz-AtY" secondAttribute="centerY" id="NJh-hA-GZH"/>
                             <constraint firstItem="jUa-dF-elw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q54-9M-hMq"/>
                             <constraint firstItem="iqD-Q5-3OR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QSl-i5-6Lj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWd-uz-AtY" secondAttribute="bottom" constant="20" id="R2F-vH-ijm"/>
                             <constraint firstItem="dnl-nD-3ZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YJf-yp-xKK"/>
                             <constraint firstItem="AWd-uz-AtY" firstAttribute="width" secondItem="54v-Qu-sIu" secondAttribute="height" multiplier="50:3" id="fwq-5W-Ih6"/>
                             <constraint firstItem="MtZ-3k-m3Q" firstAttribute="top" secondItem="jUa-dF-elw" secondAttribute="bottom" constant="1" id="mP7-wg-BT8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWd-uz-AtY" secondAttribute="bottom" constant="20" id="oIt-Fq-zXU"/>
                             <constraint firstItem="jUa-dF-elw" firstAttribute="top" secondItem="iqD-Q5-3OR" secondAttribute="bottom" constant="6" id="unM-tg-akm"/>
                             <constraint firstItem="MtZ-3k-m3Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vbi-YU-1nb"/>
                             <constraint firstItem="dnl-nD-3ZW" firstAttribute="top" secondItem="MtZ-3k-m3Q" secondAttribute="bottom" constant="-3" id="xmD-DA-wSH"/>
@@ -83,6 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomLayout" destination="R2F-vH-ijm" id="8yl-xp-Byw"/>
                         <outlet property="guessButton" destination="54v-Qu-sIu" id="nkG-hU-tA2"/>
                         <outlet property="guessTextField" destination="AWd-uz-AtY" id="zRG-AR-kGq"/>
                         <outlet property="guessesLabel" destination="dnl-nD-3ZW" id="RcP-el-g88"/>
@@ -114,4 +115,7 @@
             <point key="canvasLocation" x="356" y="1047"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1.gif" width="100" height="100"/>
+    </resources>
 </document>

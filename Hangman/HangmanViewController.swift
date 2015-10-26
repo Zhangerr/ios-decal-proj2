@@ -9,11 +9,28 @@
 import UIKit
 
 class HangmanViewController: UIViewController {
-
+    @IBOutlet weak var bottomLayout: NSLayoutConstraint!;
+    var bottom:CGFloat?;
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         startNewGame()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object: nil);
+        bottom = bottomLayout?.constant
+    }
+    func keyboardWillShow(sender: NSNotification) {
+        if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.bottomLayout?.constant = bottom! + keyboardSize.height
+            print(keyboardSize.height)
+        }
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.bottomLayout?.constant = bottom!
+        }
     }
     func startNewGame() {
         hangman.start()
@@ -21,6 +38,7 @@ class HangmanViewController: UIViewController {
         knownLetters.text = hangman.knownString
         print(hangman.answer)
         wrongCounter = 0
+        hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
     }
     @IBAction func createNewGame(sender: AnyObject) {
         startNewGame()
@@ -28,6 +46,7 @@ class HangmanViewController: UIViewController {
     }
     var hangman:Hangman = Hangman()
     var wrongCounter = 0
+
     @IBOutlet weak var knownLetters: UILabel!
     @IBOutlet weak var newGame: UIBarButtonItem!
     @IBOutlet weak var guessButton: UIButton!
@@ -39,7 +58,8 @@ class HangmanViewController: UIViewController {
             let guess = guessTextField.text!
             if !hangman.guessLetter(String(guess[guess.startIndex]).uppercaseString) {
                 wrongCounter++
-                if wrongCounter == 7 {
+                hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
+                if wrongCounter == 6 {
                     let alert = UIAlertController(title: "You lose!", message:"", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -54,6 +74,7 @@ class HangmanViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
                 gameOver()
             }
+            guessTextField.text = ""
         }
     }
     func gameOver() {
