@@ -76,6 +76,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HAF-KR-Ctj">
+                        <barButtonItem key="leftBarButtonItem" title="Start Over" id="HNd-45-x0l">
+                            <connections>
+                                <action selector="startOver:" destination="BYZ-38-t0r" id="jll-Mk-Xxw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Game" id="GaW-l0-lFc">
                             <connections>
                                 <action selector="createNewGame:" destination="BYZ-38-t0r" id="s0X-QY-Thy"/>

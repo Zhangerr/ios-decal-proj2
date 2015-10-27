@@ -11,6 +11,15 @@ import UIKit
 class HangmanViewController: UIViewController {
     @IBOutlet weak var bottomLayout: NSLayoutConstraint!;
     var bottom:CGFloat?;
+    @IBAction func startOver(sender: AnyObject) {
+        wrongCounter = 0
+        hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
+        guessButton.enabled = true
+        guessesLabel.text = ""
+        hangman.start_over()
+        knownLetters.text = hangman.knownString
+        guessTextField.text = ""
+    }
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -37,6 +46,7 @@ class HangmanViewController: UIViewController {
         knownLetters.text = hangman.knownString
         wrongCounter = 0
         hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
+        guessTextField.text = ""
     }
     @IBAction func createNewGame(sender: AnyObject) {
         startNewGame()
@@ -78,6 +88,7 @@ class HangmanViewController: UIViewController {
         }
     }
     func gameOver() {
+        guessTextField.text = ""
         guessButton.enabled = false
         
     }

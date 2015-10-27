@@ -34,6 +34,17 @@ class Hangman {
         }
         guessedLetters = NSMutableArray()
     }
+    func start_over() {
+        knownString = ""
+        for (var i = 0; i < answer!.characters.count; i += 1) {
+            if (answer! as NSString).substringWithRange(NSMakeRange(i, 1)) == " " {
+                knownString = knownString! + " "
+            } else {
+                knownString = knownString! + "_"
+            }
+        }
+        guessedLetters = NSMutableArray()
+    }
     
     // Guess a letter, adding that letter to guessedLetters, and checking that letter against
     // the answer phrase. Returns whether or not the guess is correct.

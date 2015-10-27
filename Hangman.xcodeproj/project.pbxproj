@@ -15,7 +15,6 @@
 		3A2BBF6D1BCDDDA900B23285 /* HangmanPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BBF6C1BCDDDA900B23285 /* HangmanPhrase.swift */; settings = {ASSET_TAGS = (); }; };
 		3A2BBF6F1BCDDEBB00B23285 /* phrases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BBF6E1BCDDEBB00B23285 /* phrases.plist */; settings = {ASSET_TAGS = (); }; };
 		3A2BBF731BCDE37800B23285 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BBF721BCDE37800B23285 /* Hangman.swift */; settings = {ASSET_TAGS = (); }; };
-		E3E58E841BDDFBB4006EA1DD /* basic-hangman-img in Resources */ = {isa = PBXBuildFile; fileRef = E3E58E831BDDFBB4006EA1DD /* basic-hangman-img */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		3A2BBF6C1BCDDDA900B23285 /* HangmanPhrase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanPhrase.swift; sourceTree = "<group>"; };
 		3A2BBF6E1BCDDEBB00B23285 /* phrases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = phrases.plist; sourceTree = "<group>"; };
 		3A2BBF721BCDE37800B23285 /* Hangman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hangman.swift; sourceTree = "<group>"; };
-		E3E58E831BDDFBB4006EA1DD /* basic-hangman-img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "basic-hangman-img"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +44,6 @@
 		3A2BBF4D1BCDDAC200B23285 = {
 			isa = PBXGroup;
 			children = (
-				E3E58E831BDDFBB4006EA1DD /* basic-hangman-img */,
 				3A2BBF581BCDDAC200B23285 /* Hangman */,
 				3A2BBF571BCDDAC200B23285 /* Products */,
 			);
@@ -157,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3E58E841BDDFBB4006EA1DD /* basic-hangman-img in Resources */,
 				3A2BBF6F1BCDDEBB00B23285 /* phrases.plist in Resources */,
 				3A2BBF641BCDDAC200B23285 /* LaunchScreen.storyboard in Resources */,
 				3A2BBF611BCDDAC200B23285 /* Assets.xcassets in Resources */,
