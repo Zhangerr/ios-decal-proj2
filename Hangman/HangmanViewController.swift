@@ -58,10 +58,12 @@ class HangmanViewController: UIViewController {
                 wrongCounter++
                 hangmanImage.image = UIImage(named:"hangman\(wrongCounter+1).gif")
                 if wrongCounter == 6 {
-                    let alert = UIAlertController(title: "You lose!", message:"", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "You lose!", message:"The phrase was \"\(hangman.answer!)\".", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
+                    knownLetters.text = hangman.answer
                     gameOver()
+                    return
                 }
             }
             knownLetters.text = hangman.knownString
